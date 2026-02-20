@@ -1,9 +1,9 @@
 source "https://rubygems.org"
 
-ruby '4.0.1'
+ruby "4.0.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 8.1.0'
+gem "rails", "~> 8.1.0"
 
 # Use pg as the database for Active Record
 gem "pg", "~> 1.6"
@@ -33,7 +33,7 @@ gem "redis", ">= 4.0.1"
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
@@ -43,21 +43,18 @@ gem "image_processing", "~> 1.13"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[mri windows]
 
-  gem 'brakeman'
-  gem 'dotenv-rails', '~> 3.1'
-  gem 'rubocop', '~> 1.23'
-  gem 'rubocop-performance'
-  gem 'rubocop-rails'
-
-
+  gem "brakeman"
+  gem "dotenv-rails", "~> 3.1"
+  gem "rubocop", "~> 1.23"
+  gem "rubocop-performance"
+  gem "rubocop-rails"
 end
 
 group :development do
   gem "foreman"
-
-  gem 'listen', '>= 3.0'
+  gem "listen", ">= 3.0"
 
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -66,8 +63,8 @@ group :development do
   gem "letter_opener"
 
   # LSP support for Ruby
-  gem 'ruby-lsp'
-  gem 'ruby-lsp-rails'
+  gem "ruby-lsp"
+  gem "ruby-lsp-rails"
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -77,28 +74,30 @@ group :development do
 end
 
 group :test do
-  gem 'spree_dev_tools'
-  gem 'rails-controller-testing'
+  gem "spree_dev_tools"
+  gem "rails-controller-testing"
 end
 
 # Use Sidekiq for background jobs
-gem 'sidekiq'
-gem 'connection_pool', '~> 2.3' # lock to 2.3 to avoid breaking changes
+gem "sidekiq"
+gem "connection_pool", "~> 2.3" # lock to 2.3 to avoid breaking changes
 
 # Use Devise for authentication
 gem "devise"
 
 # Sentry for error/performance monitoring
-gem 'sentry-ruby'
-gem 'sentry-rails'
-gem 'sentry-sidekiq'
+gem "sentry-ruby"
+gem "sentry-rails"
+gem "sentry-sidekiq"
 
-# Spree gems
-spree_opts = '>= 5.3.0.rc2'
+# Spree gems (pin to a stable version so Heroku builds stay consistent)
+spree_opts = "= 5.3.2"
+
 gem "spree", spree_opts
 gem "spree_emails", spree_opts
 gem "spree_sample", spree_opts
 gem "spree_admin", spree_opts
+gem "spree_storefront", spree_opts
 gem "spree_i18n"
 gem "spree_stripe"
 gem "spree_klaviyo"
