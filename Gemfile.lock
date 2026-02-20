@@ -890,15 +890,15 @@ DEPENDENCIES
   sentry-ruby
   sentry-sidekiq
   sidekiq
-  spree (>= 5.3.0.rc2)
-  spree_admin (>= 5.3.0.rc2)
+  spree (= 5.3.2)
+  spree_admin (= 5.3.2)
   spree_dev_tools
-  spree_emails (>= 5.3.0.rc2)
+  spree_emails (= 5.3.2)
   spree_i18n
   spree_klaviyo
   spree_paypal_checkout (~> 0.5)
-  spree_sample (>= 5.3.0.rc2)
-  spree_storefront (>= 5.3.0.rc2)
+  spree_sample (= 5.3.2)
+  spree_storefront (= 5.3.2)
   spree_stripe
   stimulus-rails
   turbo-rails
