@@ -34,8 +34,8 @@
     "postdeploy": "bundle exec rails db:seed"
   },
   "addons": [
-    "heroku-postgresql",
-    "heroku-redis"
+    { "plan": "heroku-postgresql:essential-0" },
+    { "plan": "heroku-redis:mini" }
   ],
   "buildpacks": [
     {
