@@ -16,6 +16,22 @@ Rails.application.routes.draw do
         router_name: :spree
       )
     end
+  end
+  Spree::Core::Engine.add_routes do
+    # Storefront routes
+    scope '(:locale)', locale: /#{Spree.available_locales.join('|')}/, defaults: { locale: nil } do
+      devise_for(
+        Spree.user_class.model_name.singular_route_key,
+        class_name: Spree.user_class.to_s,
+        path: :user,
+        controllers: {
+          sessions: 'spree/user_sessions',
+          passwords: 'spree/user_passwords',
+          registrations: 'spree/user_registrations'
+        },
+        router_name: :spree
+      )
+    end
 
     # Admin authentication
     devise_for(
