@@ -85,3 +85,11 @@ Spree.screenshot_api_token = ENV['SCREENSHOT_API_TOKEN'] if ENV['SCREENSHOT_API_
 Rails.application.config.to_prepare do
   require_dependency 'spree/authentication_helpers'
 end
+
+            Rails.application.config.to_prepare do
+              require_dependency 'spree/authentication_helpers'
+            end
+
+            if defined?(Devise) && Devise.respond_to?(:parent_controller)
+              Devise.parent_controller = "Spree::BaseController"
+            end
